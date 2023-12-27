@@ -7,7 +7,7 @@ const getPokemons = async (
 ): Promise<SimplePokemon[]> => {
   const data: PokemonsResponse = await fetch(
     `http://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
-  ).then((res) => res.json);
+  ).then((res) => res.json());
 
   const pokemons = data.results.map((pokemon) => ({
     id: pokemon.url.split("/").at(-2)!,
